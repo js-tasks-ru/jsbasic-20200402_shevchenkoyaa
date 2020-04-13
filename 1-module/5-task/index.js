@@ -5,10 +5,12 @@
  * @returns {string}
  */
 function truncate(str, maxlength) {
-    
-    if maxlength >= 20 {
-        return str.slice(19)
+
+    if (str.length >= maxlength) {
+        return str.slice(0, 19) + "…"; 
+    } else {
+
+return str  
     }
 
-    
 }
