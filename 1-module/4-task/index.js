@@ -4,5 +4,10 @@
  * @returns {boolean}
  */
 function checkSpam(str) {
-  // ваш код...
+lowerName = str.toLowerCase ();
+if (str === '' || str.includes('now') || str.includes('xxx')) {
+    return true;
+} else {
+    return false;
+ }
 }
