@@ -3,9 +3,9 @@
  * @returns {string}
  */
 function camelize(str) {
-  let splitedArr = str.split('-');
+  let arr = str.split('-');
 
-  let arrName = splitedArr.map(splitedArr => splitedArr.toUpperCase() + splitedArr.slice(1))
+  let arrName = arr.map(arr => arr[0].toUpperCase() + arr.slice(1))
 
 let oneName = arrName.join('')
 
