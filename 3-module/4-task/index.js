@@ -9,4 +9,5 @@ function showSalary(data, age) {
   .filter((employe) => employe.age <= age)
   .map((employe) => employe.name + ', ' + employe.balance)
   .join('\n')
+  return salary
 }
