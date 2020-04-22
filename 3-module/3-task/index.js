@@ -7,10 +7,10 @@ function camelize(str) {
  
 
   let arr = str.split('-'); 
+  
 
 
-
-  let arrName = arr.map(arr => arr[0].toUpperCase() + arr.slice(1)) 
+ let arrName = arr.map((item, index) => index == 0 ? item : item[0].toUpperCase() + item.slice(1));
 
 
 let oneName = arrName.join('')

@@ -20,4 +20,3 @@ let finalResult = {max, min};
 return finalResult 
 }
 
-return getMinMax
