@@ -9,10 +9,6 @@ function makeFriendsList(friends) {
   
     ul.innerHTML = `<li> ${friends[i].firstName} ${friends[i].lastName} </li>`
     
-  return ul.innerHTML
-  
   }
-  
-  
+  return ul
   }
-  
