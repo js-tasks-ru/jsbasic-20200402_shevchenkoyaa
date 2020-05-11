@@ -30,5 +30,26 @@
  */
 export default class UserTable {
   constructor(rows) {
+    let table = document.createElement('table');
+    let button = '<td><button>X</button></td>';
+    let tr = target.closest('tr')
+   // button.addEvenlistener ('click', delete)
+
+    for (let prop in rows) {
+      table.innerHTML = `  
+      <tr>
+      <td>${prop.name}</td>
+      <td>${prop.age}</td>
+      <td>${prop.salary}</td>
+      <td>${prop.city}</td>
+      <td><button>X</button></td>
+      </tr>`;
+
+    }
+    
+    /* function delete () {
+      tr.remove()
+    }*/
+
   }
 }
