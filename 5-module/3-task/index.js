@@ -4,6 +4,7 @@ let leftClickButton = document.querySelector('.carousel__arrow_left');
 let carousel = document.querySelector('.carousel__inner');
 let counter = 0 
 let offsetWidth = carousel.offsetWidth
+leftClickButton.style.display = 'none'
 
 
 rightClickButton.addEventListener('click', counterPlus);
@@ -28,37 +29,21 @@ function counterMinus() {
     }
 
 function sliding() {
-   if (counter => 0) {
+   if (counter >= 0) {
       carousel.style.transform = `translateX(${-offsetWidth * counter}px)`
    }
 } 
 
-/*
-function arrowHide() {
-   if (counter === 0) {                      
-      leftClickButton.style.display = 'none'
-   } else if (counter === 3) {
-      rightClickButton.style.display = 'none'
-   } else if (counter === 1) {
-      leftClickButton.style.display = ''
-   } else if (counter === 2) {
-      rightClickButton.style.display = ''
-   }
-   
-}
-*/
 
 function arrowHide() {
-   if (counter) {                      
-      rightClickButton.style.display = ''
-      leftClickButton.style.display = ''
-   } else if (counter === 0) {
-      leftClickButton.style.display = 'none'
+   rightClickButton.style.display = ''
+   leftClickButton.style.display = ''
+   if (counter === 0) {
+     leftClickButton.style.display = 'none'
    } else if (counter === 3) {
-      rightClickButton.style.display = 'none'
-   } 
-   
-}
+     rightClickButton.style.display = 'none'
+   }
+ }
 
  console.log(offsetWidth)
  console.log(counter)

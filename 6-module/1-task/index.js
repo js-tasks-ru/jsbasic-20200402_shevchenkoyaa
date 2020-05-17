@@ -30,26 +30,47 @@
  */
 export default class UserTable {
   constructor(rows) {
-    let table = document.createElement('table');
+    this.elem = document.createElement('table');
     let button = '<td><button>X</button></td>';
-    let tr = target.closest('tr')
-   // button.addEvenlistener ('click', delete)
-
-    for (let prop in rows) {
-      table.innerHTML = `  
-      <tr>
-      <td>${prop.name}</td>
-      <td>${prop.age}</td>
-      <td>${prop.salary}</td>
-      <td>${prop.city}</td>
-      <td><button>X</button></td>
-      </tr>`;
-
-    }
+    button.addEventListener ('click', deleteTr);
+    this.maketable(rows);
     
-    /* function delete () {
-      tr.remove()
-    }*/
-
   }
-}
+  
+   
+
+    maketable (rows) { 
+        const list = rows.map(data => `
+        <tr>
+        <td>${data.name}</td>
+        <td>${data.age}</td>
+        <td>${data.salary}</td>
+        <td>${data.city}</td>
+        <td><button>X</button></td>
+        </tr>
+        `).join('')
+        this.elem.innerHTML = `
+    <table>
+    <thead>
+      <tr>
+        <td>Имя</td>
+        <td>Возраст</td>
+        <td>Зарплата</td>
+        <td>Город</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      ${list}
+    </tbody>
+    </table>
+    `;
+    }
+    function deleteTr () {
+
+      let deleteEvent = target.colsest('tr')
+      deleteEvent.remove
+    }
+
+    
+  }
