@@ -31,10 +31,8 @@
 export default class UserTable {
   constructor(rows) {
     this.elem = document.createElement('table');
-    let button = '<td><button>X</button></td>';
-    button.addEventListener ('click', deleteTr);
     this.maketable(rows);
-    
+    this.elem.addEventListener('click', (event) => this.onClick(event));
   }
   
    
@@ -66,11 +64,13 @@ export default class UserTable {
     </table>
     `;
     }
-    function deleteTr () {
-
-      let deleteEvent = target.colsest('tr')
-      deleteEvent.remove
+    
+    
+    onClick(event) {
+      if (event.target.closest('button')) {
+        event.target.closest('tr').remove()
+        
+      }
     }
 
-    
   }
